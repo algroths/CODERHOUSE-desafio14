@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <%- include('./partials/header', { current: 'info' }) %>
+        </header>
+        <main>
+            <h2>Productos</h2>
+            <table class="table">
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th>
+                            <p>Argumentos: <%=arg%>
+                            </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Sistema operativo: <%=os%>
+                            </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Version node: <%=vNode%>
+                            </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>RSS: <%=rss%>
+                            </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Path: <%=path%>
+                            </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Process ID: <%=id%>
+                            </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Carpeta actual: <%=dir%>
+                            </p>
+                        </th>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+
+</html>

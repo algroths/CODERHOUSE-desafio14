@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejs</title>
+    <link rel="shortcut icon" href="http://localhost:8080/static/ejs.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/index.css">
+    <title>EJS</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <%- include('./partials/header', { current: 'index' }) %>
+        </header>
+        <main>
+            <div class="saludo">
+                <h3>Hola <%= username %>
+                </h3>
+                <form action="/logout">
+                    <button type="submit" class="btn btn-primary">Logout</button>
+                </form>
+            </div>
+            <h4>Ingrese producto</h4>
+            <form action="/productos" method="POST">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="1" name="title" required="text">
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" class="form-control" id="2" name="price" required="text">
+                </div>
+                <div class="mb-3">
+                    <label for="url" class="form-label">Url</label>
+                    <input list="listaImagenes" type="text" class="form-control" id="3" name="url" required="url"
+                        value="">
+                    <datalist id="listaImagenes">
+                        <option value="/static/dragon.png">
+                        <option value="/static/harry.png">
+                        <option value="/static/spok.png">
+                        <option value="/static/mario.png">
+                        <option value="/static/thugLife.png">
+                    </datalist>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </main>
+    </div>
+    <br>
+    <div class="tableProduct">
+        <h4>Lista de productos</h4>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider" id="contentTable">
+
+            </tbody>
+
+        </table>
+    </div>
+    <br>
+    <div class="tableProduct">
+        <h4>Centro de mensajes</h4>
+        <input class="form-control" id="email" type="email" name="email" required="email">
+        <hr>
+        <div class="panel-body">
+            <div id="scroll" class="containerMessages">
+                <div id="message" class="row message-bubble">
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="input-group">
+                    <input id="inputMessage" type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button id="enviar" class="btn btn-default" type="button">Send</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/index.js"></script>
+</body>
+
+</html>

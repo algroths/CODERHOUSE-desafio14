@@ -1,0 +1,74 @@
+.tableProduct {
+    padding: 10px;
+    background-color: rgba(152, 199, 214, 0.11);
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.saludo {
+    background-color: rgba(96, 255, 34, 0.363);
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.login {
+    padding: 20px;
+    margin: 30px;
+    background-color: rgb(202, 202, 202);
+}
+
+#email {
+    margin-top: 30px;
+    width: 30%;
+}
+
+hr {
+    border: 2px solid black;
+}
+
+#sendMessage {
+    margin-bottom: 50px;
+
+}
+
+#msnEmail {
+    color: #3d6da7;
+    font-weight: bold;
+}
+
+#text {
+    color: rgb(0, 83, 0);
+}
+
+.containerMessages {
+    height: 200px;
+    width: 100%;
+    overflow: auto;
+}
+
+.message-bubble {
+    width: 70%;
+    margin-left: 10px;
+}
+
+.message-bubble:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+.message-bubble>* {
+    padding-left: 10px;
+}
+
+.panel-body {
+    padding: 0px;
+}
+
+.panel-heading {
+    margin-top: 30px;
+    height: 3px;
+    background-color: #3d6da7 !important;
+    color: white !important;
+}

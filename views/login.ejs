@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <div class="login">
+                <%= message.join(', ')%>
+                <form action="/login" method="POST">
+                    <div>
+                        <label for="username">Nombre de usuario</label>
+                        <input type="text" name="username">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="text" name="password">
+                    </div>
+                    <div>
+                        <button type="submit">Iniciar sesión</button>
+                    </div>
+                </form>
+                <form action="/signup" method="GET">
+                    <button type="submit">Sign up</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
