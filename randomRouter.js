@@ -9,7 +9,10 @@ randomRouter.get('', (req, res) => {
     const calculo = fork('./calculo.js', [num])
 
     calculo.on('message', msg => {
-        return res.end(msg)
+
+        const resultado = msg.reduce((prev, cur) => ((prev[cur] = prev[cur] + 1 || 1), prev), {})
+
+        return res.json(resultado)
     })
 
 

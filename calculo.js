@@ -1,12 +1,20 @@
 const calculo = () => {
-    let def = 1 * 10e5
+    let num = process.argv[2]
+    const obj = []
+    if (num === "undefined") {
 
-    console.log(typeof process.argv[2])
-    if (typeof process.argv[2] === "undefined") {
-
+        let num = 1 * 10e5
     }
 
-    return cont
+    for (let i = 0; i < num; i++) {
+        let random = Math.round(Math.random() * 1000)
+
+        console.log(random)
+        obj.push(random)
+    }
+
+
+    return obj
 }
 
 
