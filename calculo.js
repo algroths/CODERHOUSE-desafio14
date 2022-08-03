@@ -10,12 +10,8 @@ const calculo = () => {
 
         obj.push(random)
     }
-
-
     return obj
 }
-
-
 const num = calculo()
 
 process.send(num)
